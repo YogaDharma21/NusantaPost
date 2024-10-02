@@ -15,7 +15,7 @@
 <body class="font-[Poppins] pb-[72px]">
     <nav id="Navbar" class="max-w-[1130px] mx-auto flex justify-between items-center mt-[30px]">
         <div class="logo-container flex gap-[30px] items-center">
-            <a href="index.html" class="flex shrink-0">
+            <a href="{{ route('front.index') }}" class="flex shrink-0">
                 <img src="assets/images/logos/logo.svg" alt="logo" />
             </a>
             <div class="h-12 border border-[#E8EBF4]"></div>
