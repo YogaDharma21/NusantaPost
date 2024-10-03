@@ -111,4 +111,42 @@ class FrontController extends Controller
     ->where('name','LIKE','%'.$keyword.'%')->paginate(6);
     return view('front.search',compact('article','keyword','categories'));
   }
+
+  public function details(ArticleNews $articleNews){
+    $categories = Category::all();
+
+    $articles = ArticleNews::with(['category'])
+    ->where('is_featured', 'not_featured')
+    ->where('id','!=', $articleNews->id)
+    ->inRandomOrder()
+    ->take(3)
+    ->get();
+
+    $bannerads = BannerAdvertisment::where('is_active','active')
+    ->where('type','banner')
+    ->inRandomOrder()
+    ->first();
+
+    $squareads = BannerAdvertisment::where('is_active','active')
+    ->where('type','square')
+    ->inRandomOrder()
+    ->take(2)
+    ->get();
+
+    if($squareads->count() < 2){
+      $squareads1 = $squareads->first();
+      $squareads2 = $squareads->first();
+    }else{
+      $squareads1 = $squareads->get(0);
+      $squareads2 = $squareads->get(1);
+    }
+
+    $authorArticle = ArticleNews::where('author_id',$articleNews->author_id)
+    ->where('id','!=',$articleNews->id)
+    ->inRandomOrder()
+    ->take(3)
+    ->get();
+
+    return view('front.details',compact('authorArticle','squareads1','squareads2','articleNews','categories','articles','bannerads'));
+  }
 }
