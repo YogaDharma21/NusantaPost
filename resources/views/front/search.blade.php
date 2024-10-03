@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link href="{{ asset('./css/output.css') }}" rel="stylesheet" />
-		<link href="{{ asset('./css/main.css') }}" rel="stylesheet" />
-		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-	</head>
-	<body class="font-[Poppins]">
+@extends('front.master')
+@section('content')
+<body class="font-[Poppins]">
   <x-navbar/>
 	<nav id="Category" class="max-w-[1130px] mx-auto flex justify-center items-center gap-4 mt-[30px]">
   @foreach ($categories as $item_category)
@@ -45,7 +38,7 @@
 		<section id="search-result" class="max-w-[1130px] mx-auto flex items-start flex-col gap-[30px] mt-[70px] mb-[100px]">
 			<h2 class="text-[26px] leading-[39px] font-bold">Search Result: <span>{{ ucfirst($keyword) }}</span></h2>
 			<div id="search-cards" class="grid grid-cols-3 gap-[30px]">
-@forelse ($article as $news)
+  @forelse ($article as $news)
 		 <a href="{{ route('front.details', $news->slug) }}" class="card">
 				<div
 					class="flex flex-col gap-4 p-[26px_20px] transition-all duration-300 ring-1 ring-[#EEF0F7] hover:ring-2 hover:ring-[#FF6B18] rounded-[20px] overflow-hidden bg-white">
@@ -63,11 +56,11 @@
 					</div>
 				</div>
 			</a>
-@empty
-  <p>No data</p>
-@endforelse
+  @empty
+    <p>No data</p>
+  @endforelse
 
 			</div>
 		</section>
 	</body>
-</html>
+@endsection
