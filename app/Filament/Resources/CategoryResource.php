@@ -7,6 +7,7 @@ use App\Filament\Resources\CategoryResource\RelationManagers;
 use App\Models\Category;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Forms\Set;
@@ -24,25 +25,30 @@ class CategoryResource extends Resource
     protected static ?string $model = Category::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-tag';
+    protected static ?string $navigationGroup = 'Other';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
+              Section::make('Name')
+              ->description('Silahkan isi nama kategori')
+              ->schema([
                 TextInput::make('name')
-                ->required()  
-                // ->afterStateUpdated(fn(Set $set, ?string $state)=>$set('slug', Str::slug($state)))
-                // ->live(debounce:250)
-                ->maxLength(255),
-
-                // TextInput::make('slug')
-                // ->required()
-                // ->disabled(),
+                ->required()
+                ->maxLength(255)
+                ->hiddenLabel(),
+              ]),
+              Section::make('Icon')
+              ->description('Silahkan isi gambar icon')
+              ->schema([
 
                 FileUpload::make('icon')
                 ->image()
-                ->required(),
-            ]);
+                ->required()
+                ->hiddenLabel(),
+              ]),
+            ])->columns(1);
     }
 
     public static function table(Table $table): Table

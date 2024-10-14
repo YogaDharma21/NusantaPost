@@ -8,6 +8,7 @@ use App\Models\BannerAdvertisment;
 use Filament\Forms;
 use Filament\Forms\Components\CheckboxList;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -25,33 +26,46 @@ class BannerAdvertismentResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-presentation-chart-line';
 
+  protected static ?string $navigationGroup = 'Other';
+
     public static function form(Form $form): Form
     { 
         return $form
             ->schema([
+              Section::make('Banner Information')
+              ->description('Silahkan isi informasi banner')
+              ->schema([
+                TextInput::make('name')
+                ->required()
+                ->maxLength(255),
+                
                 TextInput::make('link')
                 ->activeUrl()
                 ->required()
                 ->maxLength(255),
-
-                FileUpload::make('thumbnail')
-                ->image()
-                ->required(),
-
+                
                 Select::make('is_active')
                 ->options([
                   'active'=>'Active',
                   'not_active'=>'Not Active',
-                ])
+                  ])
                 ->required(),
-
+                
                 Select::make('type')
                 ->options([
                   'banner'=>"Banner",
                   'square'=>"Square",
-                ]),
+                ])
+                ])->columns(2),
 
-            
+                Section::make('Thumbnail')
+                ->description('Berikan gambar banner advertisment')
+                ->schema([
+
+                  FileUpload::make('thumbnail')
+                  ->image()
+                  ->required(),
+                ]),    
             ]);
     }
 
@@ -59,8 +73,12 @@ class BannerAdvertismentResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('link')
+                  TextColumn::make('name')
                 ->searchable(),
+
+                TextColumn::make('link')
+                ->searchable()
+                ->limit(30),
 
                 TextColumn::make('is_active')
                 ->badge()
@@ -70,6 +88,8 @@ class BannerAdvertismentResource extends Resource
                 }),
 
                 ImageColumn::make('thumbnail')
+                ->width('100%')
+                ->height('100%')
             ])
             ->filters([
                 //

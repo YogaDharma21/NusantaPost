@@ -1,7 +1,9 @@
 <nav id="Navbar" class="max-w-[1130px] mx-auto flex justify-between items-center mt-[30px]">
 		<div class="logo-container flex gap-[30px] items-center">
 			<a href="{{ route('front.index') }}" class="flex shrink-0">
-				<img src="{{asset('assets//images/logos/logo.svg')}}" alt="logo" />
+        <h1 class="font-bold text-[#FF6B18] text-4xl leading-[45px]">Nusanta</h1>
+        <h1 class="font-bold text-4xl leading-[45px] ">Post</h1>
+				{{-- <img src="{{asset('assets//images/logos/logo.svg')}}" alt="logo" /> --}}
 			</a>
 			<div class="h-12 border border-[#E8EBF4]"></div>
 			<form method="GET" action="{{ route('front.search') }}"

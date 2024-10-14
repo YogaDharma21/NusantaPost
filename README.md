@@ -1,66 +1,174 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<a id="readme-top"></a>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/YogaDharma21/NusantaPost">
+    <img src="docs/thumbnail.png" alt="Logo" >
+  </a>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+  <h3 align="center">NusantaPost</h3>
 
-## Learning Laravel
+  <p align="center">
+    Your daily dose of news that you actually care
+    <br />
+    <a href="https://github.com/YogaDharma21/NusantaPost"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="#">View Demo</a>
+    ·
+    <a href="https://github.com/YogaDharma21/NusantaPost/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    ·
+    <a href="https://github.com/YogaDharma21/NusantaPost/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+  </p>
+</div>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-### Premium Partners
+[![Product Name Screen Shot][product-screenshot]](#)
+[![Filament Screenshot][filament-screenshot]](#)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+NusantaPost is a web-based news application developed using Laravel MySql and Filament. Users are given an access to view news articles and are allowed to manage the content which is published a surge in its demand. NusantaPost provides guests with the latest news available in different sections, including, but not limited to, the ones pertaining to politics, technology, and sports to name just a few.
 
-## Contributing
+Through the use of Filament’s administration backend, admins can effectively control news articles, their categories, as well as their users. It eliminates the burden of management and administration of web content on the admin team since all processes in the creation of news articles can be done easily, quickly, accurately, and conveniently. Data backup and retrieval is made quick and reliable through theuse of MySQL Database making the app to be an upscalable one, which can manage a large load of traffic.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Some of them Key Features of NusantaPost are:
+- Timeliness: Breaking news can be read in several categories as it unfolds.
+-  Simplicity: Easy and adaptive design interface, suitable for use on computers and mobile devices as well.
+- News Segment: Articles can be organized thematically to assist the reader.
+- Searching and Making Queries: You can conduct detailed queries in order to obtain certain news items in particular.
+- Management System: Backend based on Filament for simple administration of articles, users and other parameters.
+- MySQL: Effective and quick news data management language for information storage and retrieval.
 
-## Code of Conduct
+Nusantapost is a complete system for presenting news contents in an effective manner which is further enhanced by the robust Laravel development tools and the lightweight filament admin panel.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
+### Built With
+* [![Laravel][Laravel.com]][Laravel-url]
+* [![Mysql][Mysql.com]][Mysql-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+* Composer **2.4**
+* PHP **8.3**
+
+### Installation
+1. Clone the repo
+   ```sh
+   git clone https://github.com/YogaDharma21/NusantaPost.git
+   ```
+2. Install needed laravel deppedencies
+   ```sh
+   composer install
+   ```
+3. Create a new .env from .env.example
+   ```sh
+   cp .env.example .env
+   ```
+4. Create a unique laravel key
+   ```sh
+   php artisan key:generate
+   ```
+5. Run The Project
+   ```sh
+   php artisan serve
+   ```
+6. Create a new filament user
+   ```sh
+   php artisan make:filament-user
+   ```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ROADMAP -->
+## Roadmap
+- [x] Add filament
+- [ ] Clean up components layout
+- [ ] Add responsive design / website redesign
+
+See the [open issues](https://github.com/YogaDharma21/NusantaPost/issues) for a full list of proposed features (and known issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
 ## License
+Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTACT -->
+## Contact
+Yoga Dharma - yogadharmaputra2006@gmail.com
+
+Project Link: [https://github.com/YogaDharma21/NusantaPost](https://github.com/YogaDharma21/NusantaPost)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- RESOURCE -->
+[contributors-shield]: https://img.shields.io/github/contributors/YogaDharma21/NusantaPost.svg?style=for-the-badge
+[contributors-url]: https://github.com/YogaDharma21/NusantaPost/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/YogaDharma21/NusantaPost.svg?style=for-the-badge
+[forks-url]: https://github.com/YogaDharma21/NusantaPost/network/members
+[stars-shield]: https://img.shields.io/github/stars/YogaDharma21/NusantaPost.svg?style=for-the-badge
+[stars-url]: https://github.com/YogaDharma21/NusantaPost/stargazers
+[issues-shield]: https://img.shields.io/github/issues/YogaDharma21/NusantaPost.svg?style=for-the-badge
+[issues-url]: https://github.com/YogaDharma21/NusantaPost/issues
+[license-shield]: https://img.shields.io/github/license/YogaDharma21/NusantaPost.svg?style=for-the-badge
+[license-url]: https://github.com/YogaDharma21/NusantaPost/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/ida-bagus-yoga-dharma-putra/
+[product-screenshot]: docs/screenshot.png
+[filament-screenshot]: docs/filament.png
+[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
+[Laravel-url]: https://laravel.com
+[Mysql.com]: https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white
+[Mysql-url]: https://www.mysql.com/
+

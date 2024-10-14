@@ -7,6 +7,7 @@ use App\Filament\Resources\AuthorResource\RelationManagers;
 use App\Models\Author;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -23,10 +24,16 @@ class AuthorResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
+    protected static ?string $navigationGroup = 'People';
+
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
+              Section::make('Author Data')
+              ->description('Silahkan isi data author')
+              ->schema([
+                
                 TextInput::make('name')
                 ->required()
                 ->maxLength(255),
@@ -35,9 +42,17 @@ class AuthorResource extends Resource
                 ->required()
                 ->maxLength(255),
 
+              ])->columns(2),
+              Section::make('Profile Picture')
+              ->description('Silahkan isi profil picture')
+              ->schema([
+
                 FileUpload::make('avatar')
                 ->required()
-                ->image(),
+                ->image()
+                ->hiddenLabel()
+                ])
+
             ]);
     }
 
@@ -46,7 +61,8 @@ class AuthorResource extends Resource
         return $table
             ->columns([
               ImageColumn::make('avatar'),
-                TextColumn::make('name'),
+                TextColumn::make('name')
+                ->searchable(),
                 TextColumn::make('occupation')
             ])
             ->filters([
